@@ -16,7 +16,10 @@ describe("String Calculator Tests", () => {
     test("Different Delimiters", () => {
         expect(add("//;\n1;2")).toBe(3);
     }),
-    test("Negative Numbers", () => {
+    test("Negative Number", () => {
         expect(() => add("1,-2,3")).toThrow("negative numbers not allowed -2");
+    }),
+    test("Multiple Negative Numbers", () => {
+        expect(() => add("1,-2,-3")).toThrow("negative numbers not allowed -2,-3");
     })
 });
