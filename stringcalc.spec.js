@@ -6,5 +6,8 @@ describe("String Calculator Tests", () => {
     }),
     test("Single Number", () => {
         expect(add("1")).toBe(1);
+    }),
+    test("Multiple Numbers", () => {
+        expect(add("1,2")).toBe(3);
     })
 });
