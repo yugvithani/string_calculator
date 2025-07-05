@@ -12,5 +12,8 @@ describe("String Calculator Tests", () => {
     }),
     test("Including \\n", () => {
         expect(add("1,2\n3")).toBe(6)
+    }),
+    test("Different Delimiters", () => {
+        expect(add("//;\n1;2")).toBe(3)
     })
 });
