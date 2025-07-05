@@ -6,7 +6,13 @@ const add = (ip) => {
         delimiters = new RegExp(delim);
         ip = rest;
     }
-    return ip.split(delimiters).reduce((sum, num) => sum + parseInt(num, 10), 0);
+    ip = ip.split(delimiters);
+    ip = ip.map(num => parseInt(num, 10));
+    let negatives = ip.filter(num => num < 0);
+    if(negatives.length > 0) {
+        throw new Error("negative numbers not allowed " + negatives.join(","));
+    }
+    return ip.reduce((sum, num) => sum + num, 0);
 }
 
 module.exports = { add }
